@@ -1,13 +1,11 @@
 import "./database/data-source"
 import "reflect-metadata";
+
 import express from "express";
 import { router } from "./routes";
 
-const app = express()
+export const app = express()
+export const port = process.env.APP_PORT || 3000
 
 app.use(express.json())
 app.use(router)
-
-const port = 3000
-
-app.listen(port, () => console.log(`Server is running at: http://localhost:${port}`))
