@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { AlterGenreController } from "../controllers/alter-genre-controller";
 
+import { AlterGenreController } from "../controllers/alter-genre-controller";
 import { CreateGenreController } from "../controllers/create-genre-controller";
 import { ListGenresController } from "../controllers/list-genres-controller";
 import { RemoveGenreController } from "../controllers/remove-genre-controller";
