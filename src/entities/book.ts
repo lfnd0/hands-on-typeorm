@@ -15,7 +15,7 @@ export class Book {
   description: string
 
   @Column()
-  duration: number
+  pages: number
 
   @CreateDateColumn()
   created_at: Date
