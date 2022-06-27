@@ -3,8 +3,8 @@ import { Genre } from "../entities/genre";
 
 export class ListGenresService {
   async execute(): Promise<Genre[]> {
-    const genresRepository = AppDataSource.getRepository(Genre);
-    const genres = await genresRepository.find();
+    const genreRepository = AppDataSource.getRepository(Genre);
+    const genres = await genreRepository.find();
 
     return genres;
   }
