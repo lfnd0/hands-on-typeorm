@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:${DB_VERSION}
+    container_name: hands_on_typeorm
+    ports:
+      - 5432:${DB_PORT}
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - db:/var/lib/data/postgres
+
+volumes:
+  db:
+    driver: local
