@@ -3,12 +3,13 @@ import { CreateBookService } from "../services/create-book-service";
 
 export class CreateBookController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { name, description, pages, genre_id } = request.body;
+    const { name, description, writer, pages, genre_id } = request.body;
     const service = new CreateBookService();
 
     const result = await service.execute({
       name,
       description,
+      writer,
       pages,
       genre_id
     });
