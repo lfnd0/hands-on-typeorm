@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only server.ts",
-    "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
+    "typeorm:create": "npm run typeorm -- migration:create",
+    "typeorm:run": "npm run typeorm -- migration:run -d src/database/data-source",
+    "typeorm:revert": "npm run typeorm -- migration:revert -d src/database/data-source"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
