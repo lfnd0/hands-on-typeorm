@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
-import { v4 as uuidV4 } from "uuid"
+import { v4 as uuidV4 } from "uuid";
 
 import { Genre } from "./genre";
 
@@ -12,19 +12,22 @@ export class Book {
   name: string;
 
   @Column()
-  description: string
+  description: string;
 
   @Column()
-  pages: number
-
-  @CreateDateColumn()
-  created_at: Date
-
-  @CreateDateColumn()
-  updated_at: Date
+  writer: string;
 
   @Column()
-  genre_id: string
+  pages: number;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @CreateDateColumn()
+  updated_at: Date;
+
+  @Column()
+  genre_id: string;
 
   @ManyToOne(() => Genre)
   @JoinColumn({ name: "genre_id" })
@@ -32,7 +35,7 @@ export class Book {
 
   constructor() {
     if (!this.id) {
-      this.id = uuidV4()
+      this.id = uuidV4();
     }
   }
 }
